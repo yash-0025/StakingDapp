@@ -5,7 +5,7 @@ import "@openzeppelin/contracts/token/ERC20/ERC20.sol";
 import "@openzeppelin/contracts/access/Ownable.sol";
 import "@openzeppelin/contracts/utils/ReentrancyGuard.sol";
 
-contract MultiStakingPool is Ownable, ReentrancyGuard {
+contract MultiTokenStakingPool is Ownable, ReentrancyGuard {
 
     IERC20 public immutable rewardToken;
 
