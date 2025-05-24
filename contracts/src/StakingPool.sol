@@ -48,6 +48,7 @@ contract StakingPool is Ownable,ReentrancyGuard {
     // --------------- USER FUNCTIONS -------------------------
     function stake(uint256 amount) public nonReentrant {
         require(amount>0,"Amount should be greater than 0");
+        updateReward(msg.sender);
         stakingToken.transferFrom(msg.sender, address(this), amount);
         stakedAmounts[msg.sender] += amount;
         lastUpdateTime[msg.sender] = block.timestamp;
@@ -57,7 +58,7 @@ contract StakingPool is Ownable,ReentrancyGuard {
     function unstake(uint256 amount) public nonReentrant {
         require(amount > 0, "Amount should be greater than 0");
         require(stakedAmounts[msg.sender] >= amount, "Cannot withdraw more thant the staked amount");
-
+        updateReward(msg.sender);
         stakedAmounts[msg.sender] -= amount;
         lastUpdateTime[msg.sender] = block.timestamp;
         stakingToken.transfer(msg.sender, amount);
