@@ -1,0 +1,4 @@
+{
+    "notebook.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.defaultFormatter": "NomicFoundation.hardhat-solidity"
+}
