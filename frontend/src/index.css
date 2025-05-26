@@ -1,7 +1,61 @@
 @import "tailwindcss";
 
-
-
+/* Deep Radial Gradient with Metallic Sheen */
 body {
-  @apply bg-gray-900 text-white font-sans;
+  background: 
+    radial-gradient(
+      circle at 20% 30%,
+      #0b1120 0%,       /* Deepest black (slate-950) */
+      #1e293b 40%,      /* Dark slate */
+      transparent 70%
+    ),
+    radial-gradient(
+      circle at 80% 70%,
+      #1e3a8a 0%,       /* Dark navy blue */
+      #0f172a 60%,      /* slate-900 */
+      transparent 90%
+    ),
+    linear-gradient(
+      to bottom right,
+      #020617,          /* Pure black */
+      #020617
+    );
+  min-height: 100vh;
+  background-attachment: fixed;
+}
+
+/* Stark Dark Gradient with Blue Accent */
+body {
+  background: 
+    /* Base gradient */
+    linear-gradient(
+      135deg,
+      #020617 0%,    /* Pure black */
+      #0f172a 50%,   /* slate-900 */
+      #1e3a8a 100%   /* navy-900 */
+    ),
+    
+    /* Metallic sheen overlay */
+    linear-gradient(
+      140deg,
+      rgba(30, 64, 175, 0.15) 0%,   /* blue-800 tint */
+      transparent 60%
+    );
+  
+  background-blend-mode: normal, overlay;
+  min-height: 100vh;
+  background-attachment: fixed;
+}
+
+/* Subtle grid texture */
+body::before {
+  /* content: ""; */
+  position: fixed;
+  inset: 0;
+  background-image: 
+    linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
+  background-size: 40px 40px;
+  pointer-events: none;
+  z-index: -1;
 }

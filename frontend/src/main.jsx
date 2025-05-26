@@ -9,7 +9,7 @@ import { injected, walletConnect } from "wagmi/connectors";
 
 const projectId = import.meta.env.VITE_WALLETCONNECT_PROJECT_ID;
 
-const config = creatConfig({
+const config = createConfig({
   chains: [sepolia],
   connectors: [injected(), walletConnect({ projectId })],
   transports: {

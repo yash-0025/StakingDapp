@@ -1,4 +1,5 @@
 {
     "notebook.defaultFormatter": "esbenp.prettier-vscode",
-    "editor.defaultFormatter": "NomicFoundation.hardhat-solidity"
+    "editor.defaultFormatter": "NomicFoundation.hardhat-solidity",
+    "tailwindCSS.emmetCompletions": true
 }

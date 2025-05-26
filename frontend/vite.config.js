@@ -16,5 +16,12 @@ export default defineConfig({
   ],
   define: {
     'process.env' :{}
-  }
+  },
+   server: {
+    watch: {
+      usePolling: true, // Needed for Docker/WSL2 or some file systems
+      interval: 1000,  // Polling interval (ms)
+    },
+    hmr: true,         // Enable Hot Module Replacement
+  },
 })
