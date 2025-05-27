@@ -15,7 +15,7 @@ export const Spinner = ({ size = 'md', color = 'indigo' }) => {
   }
 
   return (
-    <div 
+    <span
       className={`inline-block ${sizeClasses[size]} ${colorClasses[color]} rounded-full animate-spin`}
     />
   )
