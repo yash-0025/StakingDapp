@@ -11,7 +11,7 @@ import {
   stakingPoolAbi,
 } from "../utils/constants";
 import { useEffect } from "react";
-import toast from "react-hot-toast";
+import {toast} from "react-hot-toast";
 import { Spinner } from "./Spinner";
 import {parseUnits, formatUnits} from 'viem'
 
@@ -132,7 +132,7 @@ const StakingCard = () => {
         functionName: "approve",
         args: [stakingPoolAddress, parseUnits("1000000000", tokenDecimals)],
       });
-      toast.success("Approved Successfully");
+    //   toast.success("Approved Successfully");
     } catch (error) {
       toast.error(`Approval failed ${error.shortMessage || error.message}`);
     }
@@ -162,7 +162,7 @@ const StakingCard = () => {
         functionName: "stake",
         args: [amountWei],
       });
-      toast.success("Token Staked Successfully");
+    //   toast.success("Token Staked Successfully");
     } catch (error) {
       toast.error(`Staking failed :: ${error.shortMessage || error.message} `);
     }
@@ -184,7 +184,7 @@ const StakingCard = () => {
         functionName: "unstake",
         args: [amountWei],
       });
-      toast.success("Token Unstaked Successfully");
+    //   toast.success("Token Unstaked Successfully");
     } catch (error) {
       toast.error(`Unstaking Failed :: ${error.shortMessage || error.message}`);
     }
@@ -201,7 +201,7 @@ const StakingCard = () => {
         abi: stakingPoolAbi,
         functionName: "claimRewards",
       });
-      toast.success("Rewards Claimed Successfully");
+    //   toast.success("Rewards Claimed Successfully");
     } catch (error) {
       toast.error(
         `Claiming Rewards failed :: ${error.shortMessage || error.message}`
