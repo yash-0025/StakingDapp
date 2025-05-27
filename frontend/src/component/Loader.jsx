@@ -44,7 +44,7 @@ export const Loader = ({ duration = 3000 }) => {
         />
       </div>
       
-      {/* CSS for shine animation */}
+      
       <style jsx>{`
         @keyframes shine {
           0% { background-position: 200% center; }

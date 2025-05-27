@@ -20,5 +20,3 @@ export const Spinner = ({ size = 'md', color = 'indigo' }) => {
     />
   )
 }
-
-// Usage: <Spinner size="md" color="indigo" />

@@ -35,14 +35,7 @@ const StakingCard = () => {
     query: { enabled: isConnected && !!userAddress, refetchInterval: 5000 },
   });
 
-//   const {data: rtBalance, refetch: refetchRtBalance} = useReadContract({
-//     address: rewarderTokenAddress,
-//     abi:ERC20Abi,
-//     functionName: 'balanceOf',
-//     agrs:[userAddress],
-//     query: {enabled: isConected && !!userAddress,
-//         refetchInterval: 5000},
-//   });
+
 
   const { data: stakedSt, refetch: refetchStakedSt } = useReadContract({
   address: stakingPoolAddress,
@@ -279,6 +272,8 @@ const StakingCard = () => {
               <span className="text-sm text-gray-400 ml-2 whitespace-nowrap">RTK</span>
             </div>
           </div>
+
+          
         </div>
 
         {/* Approval Button */}
