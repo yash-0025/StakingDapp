@@ -2,7 +2,6 @@ import { useAccount, useReadContract } from 'wagmi'
 import { ERC20Abi } from '../utils/constants'
 import { formatUnits } from 'viem'
 import { Loader } from './Loader'
-import { BiWalletAlt } from 'react-icons/bi'
 
 const TokenDisplay = ({ tokenAddress, className = '' }) => {
   const { address: userAddress, isConnected } = useAccount()
@@ -39,6 +38,25 @@ const TokenDisplay = ({ tokenAddress, className = '' }) => {
       refetchInterval: 5000,
     },
   })
+
+  // Custom Wallet Icon SVG
+  const WalletIcon = () => (
+    <svg 
+      width="20" 
+      height="20" 
+      viewBox="0 0 24 24" 
+      fill="none" 
+      stroke="currentColor" 
+      strokeWidth="2" 
+      strokeLinecap="round" 
+      strokeLinejoin="round"
+      className="text-gray-400"
+    >
+      <path d="M21 12V7H5a2 2 0 0 1 0-4h14v4"></path>
+      <path d="M3 5v14a2 2 0 0 0 2 2h16v-4"></path>
+      <path d="M18 12a2 2 0 0 0 0 4h4v-4z"></path>
+    </svg>
+  )
 
   return (
     <div className={`bg-gray-900/60 border border-gray-700/40 rounded-2xl shadow-xl p-6 transition hover:shadow-blue-800/30 ${className}`}>
@@ -95,7 +113,7 @@ const TokenDisplay = ({ tokenAddress, className = '' }) => {
           )
         ) : (
           <div className="flex items-center gap-2 text-gray-400 mt-2">
-            <BiWalletAlt className="text-xl" />
+            <WalletIcon />
             <span className="text-sm">Connect your wallet to view balance</span>
           </div>
         )}
